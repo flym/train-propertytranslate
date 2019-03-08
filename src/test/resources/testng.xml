@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="propertytranslate" parallel="false">
+    <test verbose="1" name="propertytranslate" annotations="JDK">
+        <packages>
+            <package name="com.iflym.train.propertytranslate.test.*"/>
+        </packages>
+    </test>
+</suite>

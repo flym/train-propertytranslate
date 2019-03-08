@@ -1,0 +1,58 @@
+<schema name="ROOT" title="ROOT">
+    <schema name="trade_fullinfo_get_response" title="订单全信息响应">
+        <schema name="trade" title="主订单">
+            <property name="seller_nick" title="卖家昵称" dataType="STRING"/>
+            <property name="pic_name" title="交易截图" dataType="STRING" order="80"/>
+            <property name="payment" title="实付金额" dataType="DOUBLE" order="30"/>
+            <property name="seller_rate" title="卖家已评" dataType="BOOL"/>
+            <property name="post_fee" title="优惠后金额" dataType="DOUBLE"/>
+            <property name="receiver_name" title="收货人姓名" dataType="STRING" order="50"/>
+            <property name="receiver_state" title="收货人省" dataType="STRING"/>
+            <property name="receiver_address" title="收货人地址" dataType="STRING"/>
+            <property name="receiver_zip" title="收货人邮编" dataType="STRING" order="70"/>
+            <property name="receiver_mobile" title="收货人手机号" dataType="STRING" order="60"/>
+            <property name="receiver_phone" title="收货人电话" dataType="STRING"/>
+            <property name="received_payment" title="实收金额" dataType="DOUBLE"/>
+            <property name="receiver_country" title="收货人国籍" dataType="STRING"/>
+            <property name="receiver_town" title="收货人乡镇" dataType="STRING"/>
+            <property name="order_tax_fee" title="邮费" dataType="DOUBLE"/>
+            <property name="paid_coupon_fee" title="支付红包优惠" dataType="DOUBLE"/>
+            <property name="tid_str" title="订单标注" dataType="STRING"/>
+            <property name="tid" title="主订单号" dataType="STRING"/>
+            <property name="status" title="订单状态" dataType="STRING"/>
+            <property name="title" title="订单标题" dataType="STRING" order="10"/>
+            <property name="type" title="订单类型" dataType="STRING"/>
+            <property name="price" title="订单金额" dataType="DOUBLE" order="20"/>
+            <property name="discount_fee" title="优惠后金额" dataType="DOUBLE"/>
+            <property name="created" title="订单创建时间" dataType="DATETIME"/>
+            <property name="pay_time" title="订单支付时间" dataType="DATETIME"/>
+            <property name="modified" title="订单更新时间" dataType="DATETIME"/>
+            <property name="end_time" title="订单关闭时间" dataType="DATETIME"/>
+            <property name="buyer_message" title="买家留言" dataType="STRING"/>
+            <property name="buyer_memo" title="买家备注" dataType="STRING"/>
+            <property name="seller_memo" title="卖家备注" dataType="STRING"/>
+            <property name="invoice_name" title="开票名" dataType="STRING"/>
+            <property name="invoice_type" title="开票类型" dataType="STRING"/>
+            <property name="buyer_nick" title="买家昵称" dataType="STRING" order="40"/>
+            <property name="credit_card_fee" title="信用卡支付金额" dataType="DOUBLE"/>
+            <property name="shipping_type" title="运输类型" dataType="STRING"/>
+            <property name="trade_from" title="交易来源" dataType="STRING"/>
+            <property name="buyer_rate" title="买家已评" dataType="BOOL"/>
+            <property name="receiver_city" title="收货人市" dataType="STRING"/>
+            <property name="receiver_district" title="收货人区县" dataType="STRING"/>
+            <property name="service_type" title="服务类型" dataType="STRING"/>
+            <property name="retail_store_code" title="零售商编码" dataType="STRING"/>
+            <property name="retail_out_order_id" title="零售商订单id" dataType="STRING"/>
+
+            <schema name="orders" title="子订单">
+                <schema name="order" title="子订单信息">
+                    <property name="title" title="商品名称" dataType="STRING"/>
+                    <property name="unit" title="商品单位" dataType="STRING"/>
+                    <property name="oid" title="商品id" dataType="STRING"/>
+                    <property name="price" title="单价" dataType="DOUBLE"/>
+                    <property name="sum" title="商品数目" dataType="LONG"/>
+                </schema>
+            </schema>
+        </schema>
+    </schema>
+</schema>

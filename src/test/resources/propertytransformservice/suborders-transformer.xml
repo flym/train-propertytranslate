@@ -1,0 +1,17 @@
+<root>
+    <dp key="suborder.totalMoney" name="totalMoney" title="总金额" dataType="DOUBLE" order="55"/>
+
+    <!-- 提取里面的内容 -->
+    <t class="nestRollupKeyMapTransformer" key="trade_fullinfo_get_response.trade.orders"/>
+
+    <!-- 集合拆分 -->
+    <t class="splitKeyMapTransformer" key="order" merge="false"/>
+
+    <!-- 不需要的删除 -->
+    <t class="removeKeyMapTransformer" key="oid"/>
+
+    <!-- 总金额 -->
+    <t class="scriptMapTransformer" key="totalMoney" script="price * sum" keyProperty:ref="suborder.totalMoney"/>
+
+    <t class="allToStringMapTransformer"/>
+</root>

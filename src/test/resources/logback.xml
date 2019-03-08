@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+    <appender name="A1" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%-5d{yyyy-MM-dd HH:mm:ss,SSS} [%t] [%c]-[%p] %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="A1"/>
+    </root>
+    <logger name="com.iflym.train" level="DEBUG"/>
+</configuration>

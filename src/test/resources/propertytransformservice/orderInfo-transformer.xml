@@ -1,0 +1,26 @@
+<root>
+    <dp key="receiverFullAddress" name="receiverFullAddress" title="收货人详细地址" dataType="STRING" order="55"/>
+
+    <!-- 提取里面的内容 -->
+    <t class="nestRollupKeyMapTransformer" key="trade_fullinfo_get_response.trade"/>
+
+    <!-- 只保留这些数据 -->
+    <t class="multiRetainKeyMapTransformer" retainList-array="receiver_name,receiver_state,receiver_address,
+    receiver_zip,receiver_mobile,receiver_country,receiver_town,
+title,payment,price,buyer_nick,receiver_city,receiver_district,pic_name"/>
+
+    <!-- 下划线转驼峰 -->
+    <t class="allCaseLowerUnderscore2CamelKeyMapTransformer"/>
+
+    <!-- 下载链接转换 -->
+    <t class="docMapTransformer" key="picName"/>
+
+    <!-- 地址拼接 -->
+    <t class="scriptMapTransformer" key="receiverFullAddress" script="receiverCountry+receiverState+receiverCity+receiverDistrict+receiverTown+receiverAddress"
+       keyProperty:ref="receiverFullAddress"/>
+
+    <!-- 去掉临时变量 -->
+    <t class="multiRemoveKeyMapTransformer" removeList-array="receiverCountry,receiverState,receiverCity,receiverDistrict,receiverTown,receiverAddress"/>
+
+    <t class="allToStringMapTransformer" />
+</root>
